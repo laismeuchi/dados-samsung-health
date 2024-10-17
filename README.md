@@ -6,14 +6,18 @@ Em alguns projetos que trabalhei, a leitura de emails e seus anexos foi utilizad
 
 ## Arquitetura
 
-Para simular o cenário descrito anteriormente, fiz esse projeto em que eu exporto os dados das minhas atividades físicas no aplicativo de celular Samsung Health e envio para meu email.
+Para simular o cenário descrito anteriormente, fiz esse projeto em que eu exporto os dados das minhas atividades físicas no aplicativo de celular [Samsung Health](https://www.samsung.com/br/apps/samsung-health/) e envio para meu email.
 
-O email é monitorado por um Logic Apps que detecta o email e envia o anexo para uma storage na Azure.
+O email é monitorado por um [Logic Apps](https://learn.microsoft.com/pt-br/azure/logic-apps/logic-apps-overview) que detecta o email e envia o anexo para uma _storage_ na Azure.
 
-Essa storage foi registrada no Databricks como uma external location e um job é disparado quando um novo arquivo é adicionado nela.
+Essa _storage_ foi registrada no [Databricks](https://www.databricks.com/br) como uma _external location_ e um _job_ é disparado quando um novo arquivo é adicionado nela.
 
-O job faz o carregamento do csv para as camdas bronze, silver e gold.
-Assim o processo ficou todo automatizado com base no recebimento do email
+O _job_ faz o carregamento do _csv_ para as camdas _bronze_, _silver_ e _gold_.
+Assim o processo ficou todo automatizado com base no recebimento do email.
 
-![image](https://github.com/user-attachments/assets/8dad523b-a2de-4e69-a8b3-d2be381717be)
+![image](https://github.com/user-attachments/assets/f860889c-f8d7-4a43-9d45-f056c298345f)
 
+
+## Demonstração
+
+Fiz esse vídeo para apresentar o funcionamento do projeto ao vivo:
