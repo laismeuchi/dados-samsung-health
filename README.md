@@ -1,4 +1,4 @@
-# Projeto para ingestão de dados do Samsung Health
+# Ingestão de dados de email
 
 Nesse projeto a ideia era utiliziar uma fonte de dados que em alguns casos é a única saída para a ingestão de dados que não estão em nenhum sistema ou fonte de armazenamento: o envio de dados por email.
 
