@@ -1,5 +1,5 @@
 # Databricks notebook source
-from pyspark.sql.functions import year, month, weekofyear, sum, concat, date_format, lit
+from pyspark.sql.functions import year, month, weekofyear, sum, concat, to_date, lit
 
 # COMMAND ----------
 
@@ -7,13 +7,18 @@ df = spark.read.format("delta").table("s_shealth")
 
 # COMMAND ----------
 
-# create a table aggregate by year, month and week
-df_agg = (df.groupBy(date_format("start_time", "yyyy-mm-dd").alias('date'),
-                     ("exercise_type"),
-                     weekofyear("start_time").alias("week"))
-          .agg(sum("calorie").alias("total_calorie"),
-               sum("exercise_distance").alias("total_exercise_distance")))
+display(df.limit(100))
 
+# COMMAND ----------
+
+from pyspark.sql.functions import to_date, sum
+
+# create a table aggregate by year, month and week
+df_agg = (df.groupBy(to_date("start_time").alias('date'), "exercise_type")
+             .agg(sum("calorie").alias("total_calorie"),
+                  sum("exercise_distance").alias("total_exercise_distance")))
+
+display(df_agg)
 
 # COMMAND ----------
 
@@ -24,6 +29,6 @@ df_agg.write.format("delta") \
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC
-# MAGIC select min(date) from g_totals
+# %sql
+
+# select min(date) from g_totals
