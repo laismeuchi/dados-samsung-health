@@ -1,26 +1,26 @@
-# Ingestão de dados de email
+# Email Data Processing
 
-Nesse projeto a ideia era utilizar uma fonte de dados que em alguns casos é a única saída para a ingestão de dados que não estão em nenhum sistema ou fonte de armazenamento: o envio de dados por email.
+In this project, the idea was to use a data source that in some cases is the only way to ingest data that is not in any system or storage source: sending data by email.
 
-Em alguns projetos que trabalhei, a leitura de emails e seus anexos foi utilizada como solução para importar desse tipo, como por exemplo parâmetros de regras de negócio a serem aplicadas nos processamentos e que não existiam em nenhum sistema. E geralmente eram dados que podiam ser alterados pelo usuário a qualquer momento para o reprocessamento.
+In some projects I worked on, reading emails and their attachments was used as a solution to import this type, such as business rule parameters to be applied in processing that did not exist in any system. And generally, this was data that could be changed by the user at any time for reprocessing.
 
-## Arquitetura
+## Architecture
 
-Para simular o cenário descrito anteriormente, fiz esse projeto em que eu exporto os dados das minhas atividades físicas no aplicativo de celular [Samsung Health](https://www.samsung.com/br/apps/samsung-health/) e envio para meu email.
+To simulate the scenario described previously, I created this project in which I export the data from my physical activities in the [Samsung Health] cell phone application (https://www.samsung.com/br/apps/samsung-health/) and send for my email.
 
-O email é monitorado por um [Logic Apps](https://learn.microsoft.com/pt-br/azure/logic-apps/logic-apps-overview) que detecta o email e envia o anexo para uma _storage_ na Azure.
+The email is monitored by [Logic Apps](https://learn.microsoft.com/pt-br/azure/logic-apps/logic-apps-overview) which detects the email and sends the attachment to _storage_ in Azure.
 
-Essa _storage_ foi registrada no [Databricks](https://www.databricks.com/br) como uma _external location_ e um _job_ é disparado quando um novo arquivo é adicionado nela.
+This _storage_ has been registered on [Databricks](https://www.databricks.com/br) as an _external location_ and a _job_ is triggered when a new file is added to it.
 
-O _job_ faz o carregamento do _csv_ para as camdas _bronze_, _silver_ e _gold_.
-Assim o processo ficou todo automatizado com base no recebimento do email.
+The _job_ loads the _csv_ for the layers _bronze_, _silver_ and _gold_.
+This way, the process was completely automated based on receipt of the email.
 
 ![image](https://github.com/user-attachments/assets/f860889c-f8d7-4a43-9d45-f056c298345f)
 
 
-## Demonstração
+## Demonstration
 
-Fiz esse vídeo para apresentar o funcionamento do projeto ao vivo:
+I made this video to present the project live:
 
 <div>
     <a href="https://www.loom.com/share/4f6bd833f2124609b722481f4c5bb378">
@@ -31,13 +31,13 @@ Fiz esse vídeo para apresentar o funcionamento do projeto ao vivo:
     </a>
   </div>
 
-## Painel
+## Dashboard
 
-Com os dados a _bronze_ fiz esse painel simples no Databricks mesmo para apresentar os resultados.
+With the _bronze_ data I made this simple panel in Databricks to present the results.
 
 ![image](https://github.com/user-attachments/assets/c470f403-5f30-41f4-bacf-9235b8447143)
 
 
-## Códigos
+## Source code
 
-Aqui nesse projeto esta o código utilzado no _job_ do Databricks.
+Here in this project is the code used in Databricks' _job_.
