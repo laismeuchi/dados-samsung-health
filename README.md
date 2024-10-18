@@ -22,6 +22,15 @@ Assim o processo ficou todo automatizado com base no recebimento do email.
 
 Fiz esse vídeo para apresentar o funcionamento do projeto ao vivo:
 
+<div>
+    <a href="https://www.loom.com/share/4f6bd833f2124609b722481f4c5bb378">
+      <p>Samsung Health data analysis - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/4f6bd833f2124609b722481f4c5bb378">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/4f6bd833f2124609b722481f4c5bb378-f0c7c565dc0c883c-full-play.gif">
+    </a>
+  </div>
+
 ## Códigos
 
 Aqui nesse projeto esta o código utilzado no _job_ do Databricks.
