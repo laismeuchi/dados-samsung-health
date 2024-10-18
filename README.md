@@ -31,6 +31,13 @@ Fiz esse vídeo para apresentar o funcionamento do projeto ao vivo:
     </a>
   </div>
 
+## Painel
+
+Com os dados a _bronze_ fiz esse painel simples no Databricks mesmo para apresentar os resultados.
+
+![image](https://github.com/user-attachments/assets/c470f403-5f30-41f4-bacf-9235b8447143)
+
+
 ## Códigos
 
 Aqui nesse projeto esta o código utilzado no _job_ do Databricks.
