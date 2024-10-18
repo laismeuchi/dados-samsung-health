@@ -1,6 +1,6 @@
 # Ingestão de dados de email
 
-Nesse projeto a ideia era utiliziar uma fonte de dados que em alguns casos é a única saída para a ingestão de dados que não estão em nenhum sistema ou fonte de armazenamento: o envio de dados por email.
+Nesse projeto a ideia era utilizar uma fonte de dados que em alguns casos é a única saída para a ingestão de dados que não estão em nenhum sistema ou fonte de armazenamento: o envio de dados por email.
 
 Em alguns projetos que trabalhei, a leitura de emails e seus anexos foi utilizada como solução para importar desse tipo, como por exemplo parâmetros de regras de negócio a serem aplicadas nos processamentos e que não existiam em nenhum sistema. E geralmente eram dados que podiam ser alterados pelo usuário a qualquer momento para o reprocessamento.
 
